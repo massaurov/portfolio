@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://azat-massaurov.kz/sitemap.xml
+Sitemap: https://massaurov.github.io/portfolio/sitemap.xml
