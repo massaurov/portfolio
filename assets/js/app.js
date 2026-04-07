@@ -526,6 +526,7 @@ function applyLanguage(lang) {
   setPlaceholder('inputMessage', t.inputMessage);
   renderServiceOptions(lang);
 
+  const themeSwitch = document.querySelector('.theme-switch');
   if (themeSwitch) themeSwitch.setAttribute('aria-label', t.switchThemeLabel);
   if (navToggle) navToggle.setAttribute('aria-label', t.closeMenuLabel);
 
