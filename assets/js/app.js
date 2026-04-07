@@ -539,12 +539,20 @@ function applyLanguage(lang) {
   localStorage.setItem('lang', lang);
 }
 
+/* Resolve multilingual field: object {ru,en,kz} → string */
+function ml(val) {
+  if (val && typeof val === 'object' && !Array.isArray(val)) {
+    return val[currentLang] || val.ru || '';
+  }
+  return val || '';
+}
+
 function openProjectDialog(item) {
   if (!dialog) return;
   const t = I18N[currentLang] || I18N.ru;
 
-  dialogTitle.textContent = item.title;
-  dialogText.textContent = item.detail || item.desc;
+  dialogTitle.textContent = ml(item.title);
+  dialogText.textContent = ml(item.detail) || ml(item.desc);
   dialogTags.innerHTML = (item.tags || []).map((tag) => `<span class="tag">${tag}</span>`).join('');
 
   // Show source path as text, hide link for file:// protocols
@@ -594,9 +602,9 @@ function renderProjects() {
     const card = document.createElement('article');
     card.className = 'project-card reveal in';
     card.innerHTML = `
-      <p class="eyebrow">${item.type}</p>
-      <h3>${item.title}</h3>
-      <p>${item.desc}</p>
+      <p class="eyebrow">${ml(item.type)}</p>
+      <h3>${ml(item.title)}</h3>
+      <p>${ml(item.desc)}</p>
       <div class="tags">${(item.tags || []).map((tag) => `<span class="tag">${tag}</span>`).join('')}</div>
     `;
 
