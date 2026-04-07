@@ -47,11 +47,17 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://mc.yandex.ru" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    </noscript>
 
     <link rel="icon" href="logo.png" type="image/png" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260407-9" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260407-10" />
 
     <script type="application/ld+json">
     {
@@ -98,7 +104,7 @@
     <header class="header" id="top">
       <div class="container nav-wrap">
         <a href="#top" class="brand" aria-label="На главную">
-          <img src="logo.png" class="brand-logo" alt="Azat Massaurov IT Portfolio Logo" />
+          <img src="logo.png" class="brand-logo" alt="Azat Massaurov IT Portfolio Logo" width="128" height="128" />
           <span>Azat Massaurov</span>
         </a>
 
@@ -155,7 +161,7 @@
           <aside class="hero-card reveal">
             <div class="hero-avatar">
               <div class="avatar-glow"></div>
-              <img src="photo.jpg?v=2" alt="Azat Massaurov" />
+              <img src="photo.jpg?v=2" alt="Azat Massaurov" width="300" height="300" loading="lazy" decoding="async" />
             </div>
 
             <div class="dev-console">
@@ -438,8 +444,8 @@
       </article>
     </dialog>
 
-    <script src="assets/js/portfolio.js?v=20260407-9"></script>
-    <script src="assets/js/app.js?v=20260407-9"></script>
+    <script src="assets/js/portfolio.js?v=20260407-10" defer></script>
+    <script src="assets/js/app.js?v=20260407-10" defer></script>
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">

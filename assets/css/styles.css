@@ -73,6 +73,7 @@ body {
   pointer-events: none;
   z-index: 0;
   opacity: 0.5;
+  will-change: transform;
 }
 
 .orb-1 {
@@ -1146,4 +1147,21 @@ main {
 }
 @media (max-width: 992px) {
   .section.reveal::before { display: none; }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Disable heavy animations on mobile for performance */
+@media (max-width: 768px) {
+  .bg-orb { display: none; }
+  .bg-grid { display: none; }
+  .avatar-glow { animation: none; }
+  .dev-console { animation: none; }
 }
